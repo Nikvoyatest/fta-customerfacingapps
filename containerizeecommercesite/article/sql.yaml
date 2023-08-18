@@ -24,7 +24,6 @@ spec:
         component: finance-db
     spec:
       containers:
-      spec.{containers, initContainers}.securityContext.allowPrivilegeEscalation : false
       - name: finance-db
         image: microsoft/mssql-server-linux
         env:
@@ -35,6 +34,8 @@ spec:
         volumeMounts:
         - mountPath: /var/opt/mssql
           name: sqldb-home
+        securityContext:
+          allowPrivilegeEscalation : false
       volumes:
       - name: sqldb-home
         persistentVolumeClaim:
