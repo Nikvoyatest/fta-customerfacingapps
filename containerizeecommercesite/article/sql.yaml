@@ -38,7 +38,7 @@ spec:
           runAsNonRoot: true
           allowPrivilegeEscalation : false
           capabilities:
-            drop: ALL
+            drop: ["ALL"]
             add: ["NET_ADMIN", "SYS_TIME"]
       volumes:
       - name: sqldb-home
