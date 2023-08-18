@@ -24,7 +24,7 @@ spec:
         component: finance-db
     spec:
       containers:
-      allowPrivilegeEscalation : false
+      spec.{containers, initContainers}.securityContext.allowPrivilegeEscalation : false
       - name: finance-db
         image: microsoft/mssql-server-linux
         env:
