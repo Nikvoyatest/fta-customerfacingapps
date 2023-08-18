@@ -35,6 +35,7 @@ spec:
         - mountPath: /var/opt/mssql
           name: sqldb-home
         securityContext:
+          runAsNonRoot: true
           allowPrivilegeEscalation : false
           capabilities:
             add: ["NET_ADMIN", "SYS_TIME"]
