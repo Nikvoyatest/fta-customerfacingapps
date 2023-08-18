@@ -36,6 +36,8 @@ spec:
           name: sqldb-home
         securityContext:
           allowPrivilegeEscalation : false
+          capabilities:
+            add: ["NET_ADMIN", "SYS_TIME"]
       volumes:
       - name: sqldb-home
         persistentVolumeClaim:
